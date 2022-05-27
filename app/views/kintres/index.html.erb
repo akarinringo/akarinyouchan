@@ -1,0 +1,13 @@
+<h1>筋トレ</h1>
+<h3>Tweet一覧</h3>
+<%= link_to "新規投稿へ", new_kintre_path %>
+<div class="kintres-index">
+  <% @trainings.each do |t| %>
+    <div class="kintres-index-content">
+      <%= t.training_content %>
+      <%= t.created_at %>
+    </div>
+    <%= link_to "詳細へ", training_path(t.id) %>
+  <% end %>
+  
+</div>

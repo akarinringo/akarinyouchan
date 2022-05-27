@@ -1,0 +1,2 @@
+module KintresHelper
+end
