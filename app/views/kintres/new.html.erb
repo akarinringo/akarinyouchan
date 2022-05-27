@@ -1,0 +1,10 @@
+<h1>筋トレ</h1>
+<h3>筋トレ内容</h3>
+<%= form_for @training do |f| %>
+  <div class="field">
+    <%= f.label :training_content %>
+    <%= f.text_field :training_content, :size => 140 %>
+  </div>
+  <%= f.submit "投稿する" %>
+<% end %>
+<%= link_to "筋トレ一覧に戻る", kintres_path %>
