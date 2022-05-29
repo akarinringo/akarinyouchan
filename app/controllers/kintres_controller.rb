@@ -20,6 +20,19 @@ class KintresController < ApplicationController
       @training = Training.find(params[:id])
     end
   
+    def edit
+      @training = Training.find(params[:id])
+    end
+
+    def update
+    training = Training.find(params[:id])
+      if training.update(training_params)
+        redirect_to :action => "show", :id => training.id
+      else
+        redirect_to :action => "new"
+      end
+    end
+
     private
     def training_params
       params.require(:training).permit(:training_content)
