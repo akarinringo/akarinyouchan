@@ -3,7 +3,9 @@
 <%= form_for @training do |f| %>
   <div class="field">
     <%= f.label :training_content %>
-    <%= f.text_field :training_content, :size => 140 %>
+    <%= f.text_field :training_content, :size => 140 %><br>
+    <%= f.label :youtube_url %>
+    <%= f.text_field :youtube_url, :size => 140 %><br>
   </div>
   <%= f.submit "投稿する" %>
 <% end %>
