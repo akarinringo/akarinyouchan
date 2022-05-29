@@ -2,6 +2,9 @@
 <h3>筋トレ詳細</h3>
 <div class="kintres-show">
   <p><%= @training.training_content %></p>
+  <% @training.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+  <% end %>
   <p><%= @training.created_at %></p>
 </div>
 
