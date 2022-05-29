@@ -33,6 +33,12 @@ class KintresController < ApplicationController
       end
     end
 
+    def destroy
+      training = Training.find(params[:id])
+      training.destroy
+      redirect_to action: :index
+    end
+
     private
     def training_params
       params.require(:training).permit(:training_content)
