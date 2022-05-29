@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         has_many :trainings
+         has_many :trainingss, dependent: :destroy 
+  validates :name, presence: true 
+  validates :profile, length: { maximum: 200 } 
+  mount_uploader :image, ImageUploader
 end
