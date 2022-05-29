@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :kintres
   post 'trainings' => 'kintres#create'
   get 'trainings/:id' => 'kintres#show',as: 'training'
+  patch 'trainings/:id' => 'kintres#update'
+  get 'trainigs/:id/edit' => 'kintres#edit', as:'edit_tweet'
   root 'kintres#index'
 end
