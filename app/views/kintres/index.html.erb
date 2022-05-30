@@ -19,7 +19,7 @@
 <%= link_to "マイページへ", user_path(current_user.id) %>　
 <% end %>
 <div class="kintres-index">
-  <% @trainings.each do |t| %>
+  <% @trainings.each do |t| %> 
     <div class="kintres-index-content">
       <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>　
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= t.youtube_url[32..42] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
