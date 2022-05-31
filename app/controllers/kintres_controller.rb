@@ -55,6 +55,6 @@ class KintresController < ApplicationController
 
     private
     def training_params
-      params.require(:training).permit(:training_content, :youtube_url, :image, tag_ids: [])
+      params.require(:training).permit(:training_content, :youtube_url, :image, :start_time, tag_id: [])
     end
   end

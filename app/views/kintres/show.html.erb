@@ -5,6 +5,8 @@
   <% @training.tags.each do |tag| %>
     <span><%= tag.name %></span>
   <% end %>
+  <strong>時間</strong>
+  <%= @training.start_time.strftime("%Y-%m-%d %H:%M") %>
   <p><%= @training.created_at %></p>
 </div>
 

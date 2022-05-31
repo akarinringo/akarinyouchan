@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <%= link_to "ログイン", kintres_path %>
 <%= link_to "新規登録", new_user_registration_path %>
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
@@ -25,6 +26,7 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= t.youtube_url[32..42] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <%= t.training_content %>
       <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <td><%= t.start_time.strftime("%Y-%m-%d %H:%M") %></td>
       <%= t.user.email %>
       <%= t.created_at %>
     </div>
@@ -37,3 +39,13 @@
   <% end %>
   
 </div>
+
+<%= month_calendar events: @trainings do |date, trainings| %>
+  <%= date.day %>
+
+  <% trainings.each do |t| %>
+    <div>
+      <%= link_to t.training_content, @training %>
+    </div>
+  <% end %>
+<% end %>

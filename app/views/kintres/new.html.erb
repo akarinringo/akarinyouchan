@@ -21,6 +21,10 @@
             </div>
         <% end %>
   </div>
+  <div class="time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
   <%= f.submit "投稿する" %>
 <% end %>
 <%= link_to "筋トレ一覧に戻る", kintres_path %>

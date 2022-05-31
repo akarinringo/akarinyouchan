@@ -3,5 +3,9 @@
     <%= f.text_field :training_content, :size => 140 %> 
     <%= f.label :youtube_url %><br>
     <%= f.text_field :youtube_url, :size => 140 %><br>
+    <div class="time">
+        <%= f.label :start_time %>
+        <%= f.datetime_select :start_time %>
+    </div>
     <%= f.submit "編集する" %>
 <% end %>
